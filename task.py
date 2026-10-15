@@ -54,7 +54,10 @@ STUDENTS_DF = pd.DataFrame({
 
 def filter_rows_above_threshold(df: pd.DataFrame, column: str, threshold: float) -> pd.DataFrame:
     """Sub-task 1: Filter rows where the specified column is strictly greater than threshold."""
-    pass
+    df_extracted = pd.DataFrame(df)
+    # Filter rows where column is greater than threshold
+    filtered_df = df_extracted[df_extracted[column] > threshold]
+    return filtered_df
 
 def fill_missing_values(df: pd.DataFrame, fill_value: float) -> pd.DataFrame:
     """Sub-task 2: Replace all missing values (NaN/None) with fill_value."""
